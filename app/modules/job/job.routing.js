@@ -37,6 +37,12 @@
                 controllerAs: 'vm',
                 templateUrl: 'modules/job/create/create.html',
             })
+            .state('jobs.edit', {
+                url: '/edit/{id}',
+                controller: 'JobEditController',
+                controllerAs: 'vm',
+                templateUrl: 'modules/job/edit/edit.html',
+            })
             .state('jobs.view', {
                 url: '/view/{id}',
                 controller: 'JobViewController',
