@@ -7,12 +7,21 @@
 
     function UserEditController($http, $state) {
         var vm = this;
-        vm.user = {
-            name : null,
-            email: null
-        };
-        vm.edit = edit;
+        $http.get(
+            'http://localhost:8001/user/' + $state.params.id
+        ).then(function (response) {
+            vm.user = {
+                name : response.data.name,
+                email: response.data.email
+            };
+        }, function () {
+            vm.user = {
+                name : null,
+                email: null
+            };
+        });
 
+        vm.edit = edit;
         function edit() {
             $http.put(
                 'http://localhost:8001/user/' + $state.params.id,
