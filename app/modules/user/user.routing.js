@@ -37,6 +37,12 @@
                 controllerAs: 'vm',
                 templateUrl: 'modules/user/create/create.html',
             })
+            .state('users.edit', {
+                url: '/edit/{id}',
+                controller: 'UserEditController',
+                controllerAs: 'vm',
+                templateUrl: 'modules/user/edit/edit.html',
+            })
             .state('users.view', {
                 url: '/view/{id}',
                 controller: 'UserViewController',

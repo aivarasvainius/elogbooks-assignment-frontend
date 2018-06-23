@@ -8,8 +8,8 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Description</th>
-            <th>Status</th>
+            <th>Name</th>
+            <th>Email</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -20,6 +20,7 @@
             <td>{{ user.email }}</td>
             <td>
                 <button class="btn btn-xs btn-default" ui-sref="users.view({id: user.id})">View</button>
+                <button class="btn btn-xs btn-default" ui-sref="users.edit({id: user.id})">Edit</button>
             </td>
         </tr>
         </tbody>
