@@ -31,6 +31,12 @@
                     }
                 }
             })
+            .state('users.create', {
+                url: '/create',
+                controller: 'UserCreateController',
+                controllerAs: 'vm',
+                templateUrl: 'modules/user/create/create.html',
+            })
             .state('users.view', {
                 url: '/view/{id}',
                 controller: 'UserViewController',
