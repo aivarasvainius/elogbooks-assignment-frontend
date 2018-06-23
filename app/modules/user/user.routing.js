@@ -31,5 +31,23 @@
                     }
                 }
             })
+            .state('users.view', {
+                url: '/view/{id}',
+                controller: 'UserViewController',
+                controllerAs: 'vm',
+                templateUrl: 'modules/user/view/view.html',
+                resolve: {
+                    userResponse : function ($http, $stateParams) {
+                        return $http({
+                            url: 'http://localhost:8001/user/' + $stateParams.id,
+                            method: "GET"
+                        }).then(function (response) {
+                            return response.data;
+                        }, function () {
+                            console.log('Request Failed');
+                        });
+                    }
+                }
+            })
     }
 })();
